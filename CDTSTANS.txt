@@ -1,0 +1,94 @@
+Ans-1: Array of number:- An arrangement of numbers in columns and rows is called an array. Arrays are useful representations of multiplication concepts or we can say that an array is an indexed collection of data elements of the same type.
+Program to find the sum of the array:-
+<?php    
+$arr = array(1, 2, 3, 4, 5);   
+$sum = 0;  
+    
+for ($i = 0; $i < count($arr); $i++) {   
+   $sum = $sum + $arr[$i];  
+}    
+print("Sum of all the elements of an array: " . $sum);  
+?>  
+ 
+Ans-2: Program to find the repeated number.
+<?php  
+foreach (range(0, 101,1) as $arr) 
+{
+    echo $arr;  
+    print("Duplicate elements in given array: <br>");   
+   for($i = 0; $i < count($arr); $i++) 
+ {  
+    for($j = $i + 1; $j < count($arr); $j++) 
+  {  
+        if($arr[$i] == $arr[$j])  
+            print($arr[$j] . "<br>");  
+    }  
+  }  
+}
+?>
+
+Ans-3: Program to find  the maximum consecutive 1's in an array:-
+#include<bits/stdc++.h> 
+using namespace std; 
+int getMaxLength(bool arr[], int n) 
+{ 
+    int count = 0; 
+    int result = 0;
+    for (int i = 0; i < n; i++) 
+   { 
+       if (arr[i] == 0) 
+        count = 0; 
+       else
+     { 
+        count++; 
+        result = max(result, count); 
+      } 
+    } 
+   return result; 
+} 
+int main() 
+{ 
+	bool arr[] = {1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1}; 
+	int n = sizeof(arr)/sizeof(arr[0]); 
+	cout << getMaxLength(arr, n) << endl; 
+	return 0; 
+} 
+
+Ans-4: Program to print all the pairs whose sum is the given value.
+#include <bits/stdc++.h>
+using namespace std;
+int printPairs(int arr[], int n, int sum)
+{
+    int count = 0; 
+    for (int i = 0; i < n; i++)
+    for (int j = i + 1; j < n; j++)
+    if (arr[i] + arr[j] == sum)
+      cout << "(" << arr[i] << ", "<< arr[j] << ")" << endl;
+}
+int main()
+{
+	int arr[] = { 1, 5, 7, -1, 5 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int sum = 6;
+	printPairs(arr, n, sum);
+	return 0;
+}
+
+Ans-5: Database
+create table Persons (
+    User_id int,
+    UserName varchar(255) not null,
+    Password binary(64) not null,
+);
+
+create table Address(
+Id int not null,
+Street varchar(255),
+Pincode int,
+Country varchar(255),
+State varchar(50),
+Phone_No bigint(20),
+PRIMARY KEY (id),
+FOREIGN KEY (User_id) REFERENCES USER(User_id)
+);
+
